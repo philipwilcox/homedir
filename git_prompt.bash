@@ -35,6 +35,6 @@ function set_prompt {
     local LIGHT_CYAN="\[\033[1;36m\]"
     local DEFAULT="\[\033[0m\]"
 
-    PS1="\n\$(return_value_status) $LIGHT_GRAY[\d \t] $DEFAULT$GREEN\u$DEFAULT@$BLUE\h:$LIGHT_GREEN\w $LIGHT_BLUE\$(make_git_string)\n$LIGHT_CYAN💰  $DEFAULT"
+    PS1="\n\$(return_value_status) $LIGHT_GRAY[\d \t] $DEFAULT$GREEN\u$DEFAULT@$BLUE\h:$LIGHT_GREEN\w $LIGHT_BLUE\$(make_git_string)$LIGHT_CYAN\n💰  $DEFAULT"
 }
 set_prompt
