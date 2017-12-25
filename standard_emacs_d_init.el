@@ -9,3 +9,7 @@
 	     '("melpa-stable"
 	       . "https://stable.melpa.org/packages/"))
 (package-initialize)
+
+;; Make the default window bigger
+(add-to-list 'default-frame-alist '(height . 45))
+(add-to-list 'default-frame-alist '(width . 110))
