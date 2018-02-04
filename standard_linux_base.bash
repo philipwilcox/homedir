@@ -3,13 +3,8 @@
 
 export EDITOR=emacs
 
-# Here's a discussion of using SSH agent on arch wiki, in conjunction with "AddKeysToAgent yes"
-# I slightly modified to silence output.
-# https://wiki.archlinux.org/index.php/SSH_keys#SSH_agents
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-    eval "$(ssh-agent > ~/.ssh-agent-deets)" &> /dev/null
-fi
-if [[ "$SSH_AGENT_PID" == "" ]]; then
-    eval "$(<~/.ssh-agent-deets)" &> /dev/null
-fi
-# BUT NOTE THAT I NEED A CORRESPONDING `ssh-agent -k` in .bash_logout
+# See http://rabexc.org/posts/pitfalls-of-ssh-agents for why I'm not doing ssh-agent here. Instead,
+# I set my terminal emulator to run my bash shell inside of it with the following bit of magic:
+# `/usr/bin/ssh-agent /bin/bash -l`, which gives me one agent per shell so some redundant password
+# entry, but I was able to verify they unload correctly which is nice. And the password only
+# prompts, in combo with "AddKeysToAgent yes", when first needed.
