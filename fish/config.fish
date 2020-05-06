@@ -18,3 +18,4 @@ set __fish_git_prompt_color_branch 'brmagenta'
 
 # path shortening for PWD
 set fish_prompt_pwd_dir_length 0
+set -gx EDITOR emacs
