@@ -3,6 +3,8 @@
 # ```
 # source ~/Repos/homedir/fish/config.fish
 # ```
+# I usually also install https://github.com/jichu4n/fish-command-timer into ~/.config/fish/conf.d 
+
 
 # Source functions from repo
 set fish_function_path ~/Repos/homedir/fish/functions $fish_function_path
