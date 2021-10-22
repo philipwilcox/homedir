@@ -1,5 +1,5 @@
 function show_return_status
-    if test $status -eq 0
+    if test $argv[1] -eq 0
 	set_color normal
 	printf '😊 '
     else
@@ -9,11 +9,12 @@ function show_return_status
 end	
 
 function fish_prompt
+    set -l old_return_status $status
     printf '\n'
-    show_return_status
+    show_return_status $old_return_status
 
 #    set_color normal
-    set datestring (date +"%a %b %_d %R:%S")
+    set -l datestring (date +"%a %b %_d %R:%S")
     set_color $fish_color_autosuggestion
     printf '[%s] ' $datestring
 
